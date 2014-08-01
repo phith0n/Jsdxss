@@ -1,12 +1,12 @@
 
 function Jsdxss(allows){
-	this.allows = allows || {
+	var allows = allows || {
 	  "a" : [ "title", "ping", "href", "class", "target", "style" ],
 	  "b" : [ "class", "style" ],
 	  "img" : [ "src", "class", "style" ],
 	  "div" : [ "class", "style"],
 	  "p" : ["class", "style"]
-	}
+	};
 	var buildNodes = function( node ){
 		var i, newNode, attributes, child;
 
