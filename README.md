@@ -2,6 +2,7 @@ Jsdxss
 ======
 
 DOMXSS Filter Based on javascript
+Thinks For @hasegawayosuke https://twitter.com/hasegawayosuke
 
 Usage: 
 
