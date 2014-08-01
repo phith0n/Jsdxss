@@ -5,14 +5,12 @@ DOMXSS Filter Based on javascript
 
 Usage: 
 
-···
-<div id="target"></div>
-<script src="jsdxss.js"></script>
-<script>
-var html = "HTML CODE";
-(new Jsdxss()).filter(html, "target");
-</script>
-···
+&lt;div id=&quot;target&quot;&gt;&lt;/div&gt;
+&lt;script src=&quot;jsdxss.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;
+var html = &quot;HTML CODE&quot;;
+(new Jsdxss()).filter(html, &quot;target&quot;);
+&lt;/script&gt;
 
 So you can show the filtered html code on div#target
 
