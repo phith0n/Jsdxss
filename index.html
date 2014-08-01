@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>JSDXss 前端XSS过滤组件</title>
+  <script type="text/javascript" src="jsdxss.js"></script>
+</head>
+<body>
+<label for="allows">白名单：</label><br>
+<textarea id="allows" style="width:90%;height:10em">
+{
+  "a" : [ "title", "ping", "href", "class" ],
+  "b" : [ "class" ],
+  "s" : [ "class" ],
+  "img" : [ "src", "class" ],
+  "div" : [ "class" ]
+}
+</textarea><br>
+<label for="html">HTML:</label><br>
+<textarea id="html" style="width:95%;height:10em;">
+<div><b><a href="javascript:alert(1)">Hello, Sanitize</a></b></div><img src=# onerror=alert(1)>
+</textarea><br>
+<input type="button" id="filter" value="sanitize">
+<br>
+<div id="target" style="margin:0.5em;padding:0.5em;boder:solid 1px silver; background-color:#fffff0" ></div>
+</body>
+<script type="text/javascript">
+filter.onclick = function(){
+	var j = JSON.parse(allows.value.replace(/^\s\s*/, '').replace(/\s\s*$/, ''));
+	var h = html.value;
+	new Jsdxss(j).filter(h, "target");
+};
+</script>
+</html>
